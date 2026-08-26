@@ -1,5 +1,12 @@
 # Changelog
 
+### 3.1.4
+
+Bug Fixes:
+
+- Add an explicit loaded-image opacity rule for HeroUI image previews.
+- Remove temporary WebView2 debugging arguments from release builds.
+
 ### 3.1.3
 
 Debug build:

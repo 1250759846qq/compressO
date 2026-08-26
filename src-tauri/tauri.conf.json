@@ -12,7 +12,7 @@
     "longDescription": "将任意视频或图片文件压缩到极小体积。",
     "shortDescription": "将视频和图片压缩到极小体积",
     "active": true,
-    "category": "视频",
+    "category": "Video",
     "copyright": "Code For Real",
     "license": "AGPL-3.0-only",
     "licenseFile": "../LICENSE",

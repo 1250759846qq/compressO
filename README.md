@@ -2,7 +2,7 @@
   <div align="center">
    <img width="150" height="150" src="public/app-icon.png" alt="Logo" />
   </div>
-	<h1 align="center">CompressO</h1>
+	<h1 align="center">CompressO 中文版</h1>
 	<p align="center">
 		Compress any video/image into a tiny size.
     </p>
@@ -16,7 +16,7 @@
 	
 	<div align="center">
 	  <p><strong>原项目：</strong><a href="https://github.com/codeforreal1/compressO">codeforreal1/compressO</a></p>
-	  <p><strong>本项目：</strong><a href="https://github.com/1250759846qq/compressO">1250759846qq/compressO</a></p>
+	  <p><strong>本项目：</strong><a href="https://github.com/1250759846qq/compressO-zh-CN">1250759846qq/compressO-zh-CN</a></p>
 	  <p>本项目是基于原项目 CompressO 的简体中文本地化修改版，核心压缩功能未改动。</p>
 	  <p>许可证：AGPL-3.0-only。详见 <a href="./LICENSE">LICENSE</a>、<a href="./NOTICE.md">NOTICE.md</a> 和 <a href="./THIRD_PARTY_NOTICES.md">THIRD_PARTY_NOTICES.md</a>。</p>
 	</div>
@@ -41,7 +41,7 @@
 </div>
 
 ### Install
-本修改版当前在 [Releases](https://github.com/1250759846qq/compressO/releases) 提供 Windows 10 及以上 64 位安装包。原项目的 Linux、Windows 和 macOS 安装包位于 [codeforreal1/compressO Releases](https://github.com/codeforreal1/compressO/releases)。
+本修改版当前在 [Releases](https://github.com/1250759846qq/compressO-zh-CN/releases) 提供 Windows 10 及以上 64 位安装包。原项目的 Linux、Windows 和 macOS 安装包位于 [codeforreal1/compressO Releases](https://github.com/codeforreal1/compressO/releases)。
 
 <strong>Installer Info:</strong>
 

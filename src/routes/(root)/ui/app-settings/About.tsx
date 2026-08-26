@@ -46,14 +46,14 @@ function About() {
             className="text-gray-800 dark:text-gray-200 mb-1"
           />
           <Link
-            href="https://github.com/1250759846qq/compressO"
+            href="https://github.com/1250759846qq/compressO-zh-CN"
             className="flex items-center gap-1"
           >
             自由、开源的软件{' '}
           </Link>
           <Link
             className="text-xs"
-            href="https://github.com/1250759846qq/compressO/blob/main/LICENSE"
+            href="https://github.com/1250759846qq/compressO-zh-CN/blob/main/LICENSE"
           >
             采用 AGPL-3.0 许可证
           </Link>

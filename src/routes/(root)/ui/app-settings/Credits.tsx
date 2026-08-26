@@ -126,7 +126,7 @@ export default function Credits() {
         <div className="text-center pt-2 col-span-full">
           <p className="text-xs text-gray-600 dark:text-gray-400">
             完整的第三方声明与许可证可在{' '}
-            <Link href="https://github.com/1250759846qq/compressO/blob/main/THIRD_PARTY_NOTICES.md">
+            <Link href="https://github.com/1250759846qq/compressO-zh-CN/blob/main/THIRD_PARTY_NOTICES.md">
               这里
             </Link>
           </p>

@@ -3,7 +3,7 @@
 This is a modified distribution of CompressO.
 
 - Upstream project: https://github.com/codeforreal1/compressO
-- Modified source: https://github.com/1250759846qq/compressO
+- Modified source: https://github.com/1250759846qq/compressO-zh-CN
 - Original copyright and authorship remain with Code For Real and the upstream contributors.
 - License: GNU Affero General Public License v3.0 only. See `LICENSE`.
 

@@ -125,7 +125,7 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/1250759846qq/compressO/releases/latest/download/latest.json"
+        "https://github.com/1250759846qq/compressO-zh-CN/releases/latest/download/latest.json"
       ],
       "dialog": false,
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDIzRkE5RUNDNjMzMjZEQkIKUldTN2JUSmp6Sjc2SXlLUjlEaWlyK2I0QmFWbUVDRXhsU0lOdWJPOW9meVdEcUZ2NlNKVXBWaVoK"

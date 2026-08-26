@@ -27,7 +27,7 @@ interface Config {
 }
 
 const CONFIG: Config = {
-  author: 'codeforreal1',
+  author: '1250759846qq',
   repo: 'compressO',
   appName: 'CompressO',
 }

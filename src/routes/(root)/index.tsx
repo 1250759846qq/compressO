@@ -69,7 +69,7 @@ function Root() {
       })
 
       if (mediaPaths.length === 0) {
-        toast.error('No valid media files found.')
+        toast.error('未找到有效的媒体文件。')
         return
       }
 
@@ -208,7 +208,9 @@ function Root() {
       appProxy.state.isLoadingMediaFiles = false
       if (corruptedFilesCount > 0) {
         toast.error(
-          `${mediaPaths.length > 1 ? 'Some files seem' : 'File seems'} to be corrupted/invalid ${mediaPaths.length > 1 ? 'and are filtered out' : ''}.`,
+          mediaPaths.length > 1
+            ? '部分文件似乎已损坏或无效，已将其过滤。'
+            : '文件似乎已损坏或无效。',
         )
         if (corruptedFilesCount === mediaPaths.length) {
           resetProxy()
@@ -223,21 +225,21 @@ function Root() {
       const filePath = await open({
         directory: false,
         multiple: true,
-        title: `Select images/videos to compress.`,
+        title: `选择要压缩的图片或视频。`,
         filters: [
-          { name: 'video', extensions: Object.keys(extensions?.video) },
-          { name: 'image', extensions: Object.keys(extensions?.image) },
+          { name: '视频', extensions: Object.keys(extensions?.video) },
+          { name: '图片', extensions: Object.keys(extensions?.image) },
         ],
       })
       if (filePath == null) {
-        const message = 'File selection config is invalid.'
+        const message = '文件选择配置无效。'
         // biome-ignore lint/suspicious/noConsole: <>
         console.warn(message)
         return
       }
       handleMediaSelection(filePath)
     } catch (error: any) {
-      toast.error(error?.message ?? 'Could not select media.')
+      toast.error(error?.message ?? '无法选择媒体文件。')
     }
   }, [handleMediaSelection])
 
@@ -280,9 +282,9 @@ function Root() {
         <div className="flex flex-col justify-center items-center py-16 px-20 border-2 border-dashed border-zinc-200 dark:border-zinc-800 rounded-3xl">
           <Icon name="addMedia" className="text-primary" size={60} />
           <p className="text-sm mt-4 text-gray-600 dark:text-gray-400 text-center">
-            Drag & Drop
-            <span className="block text-xs">Or</span>
-            Click to select media
+            拖放到此处
+            <span className="block text-xs">或</span>
+            点击选择媒体
           </p>
         </div>
       </motion.div>

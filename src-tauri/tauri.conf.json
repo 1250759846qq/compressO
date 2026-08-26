@@ -1,7 +1,7 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/config.schema.json",
   "productName": "CompressO",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "identifier": "com.compresso.app",
   "build": {
     "beforeBuildCommand": "pnpm vite:build",
@@ -9,12 +9,14 @@
     "devUrl": "http://localhost:3001"
   },
   "bundle": {
-    "longDescription": "Compress any video/image file to a tiny size.",
-    "shortDescription": "Compress any video/image to a tiny size",
+    "longDescription": "将任意视频或图片文件压缩到极小体积。",
+    "shortDescription": "将视频和图片压缩到极小体积",
     "active": true,
-    "category": "Video",
+    "category": "视频",
     "copyright": "Code For Real",
-    "targets": ["deb", "appimage", "nsis", "dmg", "app"],
+    "license": "AGPL-3.0-only",
+    "licenseFile": "../LICENSE",
+    "targets": ["nsis"],
     "externalBin": [
       "./bin/compresso_ffmpeg",
       "./bin/compresso_ffprobe",
@@ -84,7 +86,19 @@
     "windows": {
       "certificateThumbprint": null,
       "digestAlgorithm": "sha256",
-      "timestampUrl": ""
+      "timestampUrl": "",
+      "webviewInstallMode": {
+        "type": "offlineInstaller",
+        "silent": true
+      },
+      "nsis": {
+        "installMode": "currentUser",
+        "languages": ["SimpChinese"],
+        "customLanguageFiles": {
+          "SimpChinese": "./installer/SimpChinese.nsh"
+        },
+        "displayLanguageSelector": false
+      }
     },
     "macOS": {
       "entitlements": null,
@@ -93,7 +107,12 @@
       "providerShortName": null,
       "signingIdentity": null
     },
-    "resources": { "../LICENSES/": "" },
+    "resources": {
+      "../LICENSES/": "",
+      "../LICENSE": "LICENSE",
+      "../THIRD_PARTY_NOTICES.md": "THIRD_PARTY_NOTICES.md",
+      "../NOTICE.md": "NOTICE.md"
+    },
     "linux": {
       "deb": {
         "depends": [],
@@ -106,10 +125,10 @@
     "updater": {
       "active": true,
       "endpoints": [
-        "https://github.com/codeforreal1/compressO/releases/latest/download/latest.json"
+        "https://github.com/1250759846qq/compressO/releases/latest/download/latest.json"
       ],
       "dialog": false,
-      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDZDRjIzRTAxQzc1Njc4RjgKUldUNGVGYkhBVDd5YkJNejh2aHlOeS9XekFOcUlxUXhIYlBLS1ZLdHJzVW4zRVE1QUhUUjZOd0QK"
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDIzRkE5RUNDNjMzMjZEQkIKUldTN2JUSmp6Sjc2SXlLUjlEaWlyK2I0QmFWbUVDRXhsU0lOdWJPOW9meVdEcUZ2NlNKVXBWaVoK"
     }
   },
   "app": {

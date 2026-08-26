@@ -1,5 +1,13 @@
 # Changelog
 
+### 3.1.0
+
+Features:
+
+- Simplified Chinese localization for the complete desktop application interface.
+- Windows 10 and later compatible NSIS installer with bundled offline WebView2 runtime support.
+- Open-source packaging includes AGPL license, upstream attribution, third-party notices, and modification notice.
+
 ### 3.0.0
 
 Features:

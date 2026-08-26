@@ -63,7 +63,7 @@ function MediaOutputCompareSlider({
         >
           <img
             src={src}
-            alt={`compare image ${options?.isOriginal ? 0 : 1}`}
+            alt={options?.isOriginal ? '对比原图' : '对比输出图'}
             className="w-full h-full max-h-[60vh] object-contain"
           />
           {options?.enableZoomViewer ? (
@@ -85,7 +85,7 @@ function MediaOutputCompareSlider({
                 <PhotoView src={src!}>
                   <div>
                     <Tooltip
-                      content={`Enlarge ${options?.isOriginal ? 'input' : 'output'}`}
+                      content={options?.isOriginal ? '放大原图' : '放大输出图'}
                     >
                       <Icon name="zoom" size={18} className="cursor-pointer" />
                     </Tooltip>
@@ -150,7 +150,7 @@ function MediaOutputCompareSlider({
           (mediaFile?.sizeInBytes ?? 0) >= SVG_MAX_RENDERING_SIZE_LIMIT)) ? (
         <p className="text-xs mb-2 flex justify-center items-center gap-1 text-warning-400">
           <Icon name="warning" />
-          SVG file too large. Might affect the comparison renderer performance.
+          SVG 文件过大，可能会影响对比预览性能。
         </p>
       ) : null}
       <div className="border-1 border-zinc-200 dark:border-zinc-900 overflow-hidden">

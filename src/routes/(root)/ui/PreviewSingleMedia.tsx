@@ -106,7 +106,7 @@ function PreviewSingleMedia({ mediaIndex }: PreviewSingleMediaProps) {
             }}
           >
             <div className="flex justify-center items-center">
-              <span className="block mr-2 text-sm">Compare</span>
+              <span className="block mr-2 text-sm">对比</span>
               <Icon name="compare" />
             </div>
           </Switch>
@@ -143,7 +143,7 @@ function PreviewSingleMedia({ mediaIndex }: PreviewSingleMediaProps) {
                 {compressedSizeDiff.toFixed(2)?.endsWith('.00')
                   ? compressedSizeDiff.toFixed(2)?.slice(0, -3)
                   : compressedSizeDiff.toFixed(2)}
-                %<span className="text-large block">smaller</span>
+                %<span className="text-large block">更小</span>
               </p>
             ) : null}
           </section>
@@ -151,14 +151,14 @@ function PreviewSingleMedia({ mediaIndex }: PreviewSingleMediaProps) {
           <section className={cn(['my-4 mb-2', styles.videoMetadata])}>
             <>
               <div>
-                <p className=" text-gray-600 dark:text-gray-400">Size</p>
+                <p className=" text-gray-600 dark:text-gray-400">大小</p>
                 <span className="block font-black">{mediaSize}</span>
               </div>
               <Divider orientation="vertical" className="h-8" />
             </>
             <>
               <div>
-                <p className=" text-gray-600 dark:text-gray-400">Extension</p>
+                <p className=" text-gray-600 dark:text-gray-400">扩展名</p>
                 <span className="block font-black">
                   {mediaExtension ?? '-'}
                 </span>
@@ -169,7 +169,7 @@ function PreviewSingleMedia({ mediaIndex }: PreviewSingleMediaProps) {
             {videoDuration ? (
               <>
                 <div>
-                  <p className=" text-gray-600 dark:text-gray-400">Duration</p>
+                  <p className=" text-gray-600 dark:text-gray-400">时长</p>
                   <span className="block font-black">
                     {formatDuration(videoDuration) ?? '-'}
                   </span>
@@ -182,7 +182,7 @@ function PreviewSingleMedia({ mediaIndex }: PreviewSingleMediaProps) {
                 <>
                   <div>
                     <p className=" text-gray-600 dark:text-gray-400">
-                      Dimensions
+                      尺寸
                     </p>
                     <span className="block font-black">
                       {dimensions.width ?? '-'} x {dimensions.height ?? '-'}
@@ -196,7 +196,7 @@ function PreviewSingleMedia({ mediaIndex }: PreviewSingleMediaProps) {
               {fps ? (
                 <>
                   <div>
-                    <p className=" text-gray-600 dark:text-gray-400">FPS</p>
+                    <p className=" text-gray-600 dark:text-gray-400">帧率</p>
                     <span className="block font-black">{fps ?? '-'}</span>
                   </div>
                   <Divider orientation="vertical" className="h-8" />{' '}
@@ -211,7 +211,7 @@ function PreviewSingleMedia({ mediaIndex }: PreviewSingleMediaProps) {
                   }}
                   size="sm"
                 >
-                  View Full Info
+                  查看完整信息
                 </Button>
               </div>
             </>
@@ -289,16 +289,16 @@ function PreviewSingleMedia({ mediaIndex }: PreviewSingleMediaProps) {
             value: 'text-3xl font-semibold text-primary',
           }}
           strokeWidth={2}
-          aria-label={`Progress-${compressionProgress}%`}
+          aria-label={`进度-${compressionProgress}%`}
         />
         <Image
-          alt="video to compress"
+          alt="待压缩的视频"
           src={thumbnailPath as string}
           className="z-0 w-[400px] h-[400px] min-w-[400px] min-h-[400px] hlg:w-[450px] hlg:h-[450px] hlg:min-w-[450px] hlg:min-h-[450px] object-cover rounded-full flex-shrink-0"
         />
         <div className="flex flex-col justify-center absolute top-1/2 left-1/2  translate-x-[-50%] translate-y-[-50%] z-[11] text-white1">
           <p className=" text-sm mt-10 text-center animate-pulse">
-            Processing...
+            正在处理…
           </p>
           <p
             className={`text-2xl text-center font-bold my-2 opacity-${

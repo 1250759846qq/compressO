@@ -167,6 +167,16 @@ const LANGUAGE_OPTIONS: Subtitle[] = [
   { code: 'und', name: 'Unknown' },
 ]
 
+const languageNames = new Intl.DisplayNames(['zh-CN'], { type: 'language' })
+
+const getLocalizedLanguageName = (code: string, fallback: string) => {
+  try {
+    return languageNames.of(code) ?? fallback
+  } catch {
+    return fallback
+  }
+}
+
 function Subtitles({ mediaIndex }: SubtitlesProps) {
   const {
     state: {
@@ -278,10 +288,10 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
       const filePath = await open({
         directory: false,
         multiple: false,
-        title: 'Select subtitle file (SRT)',
+        title: '选择字幕文件（SRT）',
         filters: [
           {
-            name: 'subtitle',
+            name: '字幕',
             extensions: SUBTITLE_EXTENSIONS,
           },
         ],
@@ -291,7 +301,7 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
         const newSubtitle = {
           subtitlePath: filePath,
           language: 'eng',
-          title: 'English',
+          title: getLocalizedLanguageName('eng', '英语'),
           fileName,
         }
         if (
@@ -331,7 +341,7 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
         }
       }
     } catch (error: any) {
-      toast.error(error?.message ?? 'Could not select subtitle file.')
+      toast.error(error?.message ?? '无法选择字幕文件。')
     }
   }, [mediaIndex])
 
@@ -381,8 +391,11 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
           appProxy.state.media[mediaIndex].config.subtitlesConfig!.subtitles[
             index
           ].title =
-            LANGUAGE_OPTIONS.find((lang) => lang.code === languageCode)?.name ??
-            undefined
+            getLocalizedLanguageName(
+              languageCode,
+              LANGUAGE_OPTIONS.find((lang) => lang.code === languageCode)
+                ?.name ?? '',
+            )
           appProxy.state.media[mediaIndex].isConfigDirty = true
         }
       } else {
@@ -427,7 +440,7 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
           >
             <div className="flex justify-center items-center">
               <span className="text-gray-600 dark:text-gray-400 block mr-2 text-sm">
-                Subtitles
+                字幕
               </span>
             </div>
           </Switch>
@@ -443,7 +456,7 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
                   size="sm"
                 >
                   <span className="text-sm text-gray-600 dark:text-gray-400">
-                    Preserve existing subtitles
+                    保留已有字幕
                   </span>
                 </Switch>
               </div>
@@ -463,13 +476,13 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
                       className="mb-2 p-3 bg-default-50 rounded-xl border border-default-200 dark:border-default-100"
                     >
                       <div className="text-xs font-medium text-gray-700 dark:text-gray-300 truncate mb-2 text-center">
-                        {subtitle.fileName || `Subtitle ${index + 1}`}
+                        {subtitle.fileName || `字幕 ${index + 1}`}
                       </div>
                       <div className="flex items-center justify-center gap-2">
                         <div className="flex-1 min-w-0">
                           <Autocomplete
                             fullWidth
-                            label="Language"
+                            label="语言"
                             size="sm"
                             defaultItems={LANGUAGE_OPTIONS}
                             defaultSelectedKey={getDisplayLanguageCode(
@@ -488,9 +501,15 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
                               return (
                                 <AutocompleteItem
                                   key={language.code}
-                                  textValue={language.name}
+                                  textValue={getLocalizedLanguageName(
+                                    language.code,
+                                    language.name,
+                                  )}
                                 >
-                                  {language.name}
+                                  {getLocalizedLanguageName(
+                                    language.code,
+                                    language.name,
+                                  )}
                                 </AutocompleteItem>
                               )
                             }}
@@ -521,13 +540,13 @@ function Subtitles({ mediaIndex }: SubtitlesProps) {
                 isDisabled={shouldDisableInput || isUnsupported}
                 className="mt-2"
               >
-                Add Subtitle
+                添加字幕
                 <Icon name="fileExplorer" size={14} />
               </Button>
 
               {isUnsupported ? (
                 <p className="text-xs italic text-danger-300 mt-2">
-                  {convertToExtension} does not support soft subtitles
+                  {convertToExtension} 格式不支持软字幕
                 </p>
               ) : null}
             </motion.div>

@@ -53,10 +53,10 @@ function CustomThumbnail({ mediaIndex }: CustomThumbnailProps) {
       const filePath = await open({
         directory: false,
         multiple: false,
-        title: 'Select thumbnail image.',
+        title: '选择缩略图图片。',
         filters: [
           {
-            name: 'image',
+            name: '图片',
             extensions: THUMBNAIL_EXTENSIONS,
           },
         ],
@@ -78,7 +78,7 @@ function CustomThumbnail({ mediaIndex }: CustomThumbnailProps) {
         }
       }
     } catch (error: any) {
-      toast.error(error?.message ?? 'Could not select thumbnail image.')
+      toast.error(error?.message ?? '无法选择缩略图图片。')
     }
   }, [mediaIndex])
 
@@ -142,7 +142,7 @@ function CustomThumbnail({ mediaIndex }: CustomThumbnailProps) {
           >
             <div className="flex justify-center items-center">
               <span className="text-gray-600 dark:text-gray-400 block mr-2 text-sm">
-                Thumbnail{' '}
+                缩略图{' '}
               </span>
             </div>
           </Switch>
@@ -152,8 +152,8 @@ function CustomThumbnail({ mediaIndex }: CustomThumbnailProps) {
             <TextInput
               type="text"
               label=""
-              placeholder="No thumbnail selected"
-              value={thumbnailFileName ?? 'No thumbnail selected'}
+              placeholder="未选择缩略图"
+              value={thumbnailFileName ?? '未选择缩略图'}
               isDisabled={shouldDisableInput}
               isReadOnly
               classNames={{
@@ -169,7 +169,7 @@ function CustomThumbnail({ mediaIndex }: CustomThumbnailProps) {
                 )}
               >
                 <Image
-                  alt="custom thumbnail"
+                  alt="自定义缩略图"
                   src={core.convertFileSrc(customThumbnailPath)}
                   className={
                     'max-w-[200px] max-h-[200px] mx-auto object-contain mb-4'
@@ -188,7 +188,7 @@ function CustomThumbnail({ mediaIndex }: CustomThumbnailProps) {
                     shouldDisableInput || convertToExtension === 'webm'
                   }
                 >
-                  Choose
+                  选择
                   <Icon name="fileExplorer" size={14} />
                 </Button>
               ) : (
@@ -202,12 +202,12 @@ function CustomThumbnail({ mediaIndex }: CustomThumbnailProps) {
                   }
                   color="danger"
                 >
-                  Clear
+                  清除
                 </Button>
               )}
               {convertToExtension === 'webm' ? (
                 <p className="text-xs italic text-danger-300 mt-2">
-                  webm does not support custom thumbnail
+                  webm 格式不支持自定义缩略图
                 </p>
               ) : null}
             </div>

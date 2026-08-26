@@ -421,26 +421,26 @@ const VideoTrimmerTimeline = forwardRef(
             <Popover showArrow backdrop="opaque" offset={10} placement="top">
               <PopoverTrigger>
                 <Button size="sm">
-                  Instructions
+                  操作说明
                   <Icon name="info" />
                 </Button>
               </PopoverTrigger>
               <PopoverContent>
                 <div className="p-2">
-                  <p className="text-md mb-1">Timeline Controls:</p>
-                  <p className="text-xs">- Click to select a track</p>
+                  <p className="text-md mb-1">时间轴操作：</p>
+                  <p className="text-xs">- 单击可选中片段</p>
                   <p className="text-xs">
-                    - Double click on the track to split
+                    - 双击片段可分割
                   </p>
                   <p className="text-xs">
-                    - Double click on a free area to add a new track
+                    - 双击空白区域可添加新片段
                   </p>
                   <p className="text-xs">
-                    - Select and press{' '}
+                    - 选中后按{' '}
                     <Code size="sm" className="text-xs py-0 px-1">
-                      Delete
+                      删除
                     </Code>{' '}
-                    to delete a track
+                    键可删除片段
                   </p>
                   <Button
                     size="sm"
@@ -453,7 +453,7 @@ const VideoTrimmerTimeline = forwardRef(
                       localStorage.setItem(TRIM_INSTRUCTIONS_HIDDEN_KEY, 'true')
                     }}
                   >
-                    Hide Instructions
+                    隐藏操作说明
                   </Button>
                 </div>
               </PopoverContent>

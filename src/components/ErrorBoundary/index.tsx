@@ -30,12 +30,12 @@ class ErrorBoundary extends React.Component<Props, State> {
     if (hasError) {
       return (
         <div className="w-full h-full flex justify-center items-center">
-          <h2>Oops, there is an error!</h2>
+          <h2>抱歉，程序出现了错误。</h2>
           <button
             type="button"
             onClick={() => this.setState({ hasError: false })}
           >
-            Try again?
+            重试？
           </button>
         </div>
       )

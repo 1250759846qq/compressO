@@ -9,6 +9,16 @@ import { slideDownTransition } from '@/utils/animation'
 import { cn } from '@/utils/tailwind'
 import { appProxy, normalizeBatchMediaConfig } from '../../../../-state'
 
+const languageNames = new Intl.DisplayNames(['zh-CN'], { type: 'language' })
+
+const getLocalizedLanguageName = (code: string, fallback: string) => {
+  try {
+    return languageNames.of(code) ?? fallback
+  } catch {
+    return fallback
+  }
+}
+
 type AudioTracksProps = {
   mediaIndex: number
 }
@@ -16,7 +26,7 @@ type AudioTracksProps = {
 function getLanguageFromTags(
   tags: readonly (readonly [string, string])[] | null,
 ): string {
-  if (!tags) return 'Unknown'
+  if (!tags) return '未知'
   const langTag = tags.find(([key]) => key.toLowerCase() === 'language')
   return langTag ? langTag[1] : '-'
 }
@@ -167,7 +177,7 @@ function AudioTracks({ mediaIndex }: AudioTracksProps) {
         isDisabled={shouldDisableInput || audioStreams.length === 0}
       >
         <p className="text-gray-600 dark:text-gray-400 text-sm mr-2 w-full">
-          Tracks
+          音轨
         </p>
       </Switch>
       <AnimatePresence mode="wait">
@@ -177,6 +187,10 @@ function AudioTracks({ mediaIndex }: AudioTracksProps) {
               {audioStreams.map((stream: AudioStream, index: number) => {
                 const isSelected = (selectedAudioTracks ?? []).includes(index)
                 const language = getLanguageFromTags(stream.tags)
+                const displayLanguage = getLocalizedLanguageName(
+                  language,
+                  language,
+                )
                 const title = getTitleFromTags(stream.tags)
 
                 return (
@@ -200,13 +214,13 @@ function AudioTracks({ mediaIndex }: AudioTracksProps) {
                   >
                     <div className="flex flex-col ml-2">
                       <span className="text-sm font-medium">
-                        Track #{index + 1}
+                        音轨 #{index + 1}
                         {title ? ` - ${title}` : ''}
                       </span>
                       <span className="text-xs text-gray-500 dark:text-gray-400">
-                        {language ? `${language} • ` : ''}
-                        {stream.codec.toUpperCase?.() ?? ''} • {stream.channels}{' '}
-                        channels
+                        {displayLanguage ? `${displayLanguage} · ` : ''}
+                        {stream.codec.toUpperCase?.() ?? ''} · {stream.channels}{' '}
+                        声道
                       </span>
                     </div>
                   </Checkbox>

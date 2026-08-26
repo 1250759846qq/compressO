@@ -9,13 +9,12 @@ export default function Credits() {
     <div className="w-full py-10 pb-4 px-6">
       <section className="mb-4">
         <Title
-          title="Credits"
+          title="致谢"
           iconProps={{ name: 'lowResHeart' }}
           className="mb-6"
         />
         <p className="text-gray-600 dark:text-gray-400 text-[12px] text-center mt-1">
-          CompressO would not be possible without these incredible open-source
-          tools and libraries:
+          没有这些出色的开源工具和库，就没有 CompressO：
         </p>
       </section>
       <div className="grid grid-cols-2 gap-4">
@@ -28,14 +27,14 @@ export default function Credits() {
             Copyright © 2000-2024 Fabrice Bellard, et al.
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
-            Licensed under GPL v2+ and LGPL v2.1+
+            采用 GPL v2+ 和 LGPL v2.1+ 许可证
           </p>
           <div className="flex gap-2">
             <Link
               href="https://ffmpeg.org/"
               className="text-xs text-primary hover:underline"
             >
-              Website
+              官网
             </Link>
             <Divider orientation="vertical" className="mx-1 h-4" />
             <Link
@@ -56,14 +55,14 @@ export default function Credits() {
             Copyright © 2009-2024 Kornel Lesiński
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
-            Licensed under GPL v3+
+            采用 GPL v3+ 许可证
           </p>
           <div className="flex gap-2">
             <Link
               href="https://pngquant.org/"
               className="text-xs text-primary hover:underline"
             >
-              Website
+              官网
             </Link>
             <Divider orientation="vertical" className="mx-1 h-4" />
             <Link
@@ -84,7 +83,7 @@ export default function Credits() {
             Copyright © 1996-2024 Timo Kokkonen
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
-            Licensed under GPL v3+
+            采用 GPL v3+ 许可证
           </p>
           <div className="flex gap-2">
             <Link
@@ -105,14 +104,14 @@ export default function Credits() {
             Copyright © 2019-2024 ImageOptim LLC, Kornel Lesiński
           </p>
           <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
-            Licensed under AGPL v3+
+            采用 AGPL v3+ 许可证
           </p>
           <div className="flex gap-2">
             <Link
               href="https://gif.ski/"
               className="text-xs text-primary hover:underline"
             >
-              Website
+              官网
             </Link>
             <Divider orientation="vertical" className="mx-1 h-4" />
             <Link
@@ -126,9 +125,9 @@ export default function Credits() {
 
         <div className="text-center pt-2 col-span-full">
           <p className="text-xs text-gray-600 dark:text-gray-400">
-            Complete third-party notices and licenses is available{' '}
-            <Link href="https://github.com/codeforreal1/compressO/blob/main/THIRD_PARTY_NOTICES.md">
-              here
+            完整的第三方声明与许可证可在{' '}
+            <Link href="https://github.com/1250759846qq/compressO/blob/main/THIRD_PARTY_NOTICES.md">
+              这里
             </Link>
           </p>
         </div>

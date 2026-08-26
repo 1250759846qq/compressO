@@ -1,5 +1,11 @@
 # Changelog
 
+### 3.1.3
+
+Debug build:
+
+- Add temporary WebView2 remote debugging arguments for runtime diagnosis.
+
 ### 3.1.2
 
 Bug Fixes:

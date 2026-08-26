@@ -1,5 +1,11 @@
 # Changelog
 
+### 3.1.2
+
+Bug Fixes:
+
+- Restore the upstream file-picker path flow to keep local media previews compatible with Tauri asset protocol handling.
+
 ### 3.1.1
 
 Bug Fixes:

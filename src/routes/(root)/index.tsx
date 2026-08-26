@@ -16,7 +16,6 @@ import {
   getFileMetadata,
   getImageDimension,
   getSvgDimension,
-  readFilesFromPaths,
 } from '@/tauri/commands/fs'
 import { convertSvgToPng } from '@/tauri/commands/image'
 import { extensions } from '@/types/compression'
@@ -78,15 +77,8 @@ function Root() {
       appProxy.state.totalSelectedMediaCount = mediaPaths.length
 
       let corruptedFilesCount = 0
-      let scopedMediaPaths: string[]
-      try {
-        scopedMediaPaths = await readFilesFromPaths(mediaPaths)
-      } catch {
-        scopedMediaPaths = mediaPaths
-      }
-
-      for (const index in scopedMediaPaths) {
-        const path = scopedMediaPaths[index]
+      for (const index in mediaPaths) {
+        const path = mediaPaths[index]
         try {
           const fileMetadata = await getFileMetadata(path)
           const mediaType = fileMetadata.mimeType.startsWith('video')

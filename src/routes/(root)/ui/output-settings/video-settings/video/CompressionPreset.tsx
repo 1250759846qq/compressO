@@ -141,7 +141,11 @@ function CompressionPreset({ mediaIndex }: CompressionPresetProps) {
                 {PRESETS?.map((preset) => (
                   <SelectItem
                     key={preset.name}
-                    textValue={preset.name}
+                    textValue={
+                      preset.name === compressionPresets.ironclad
+                        ? '稳定压缩'
+                        : '快速压缩'
+                    }
                     className="flex justify-center items-center"
                     endContent={
                       preset.name === compressionPresets.ironclad ? (

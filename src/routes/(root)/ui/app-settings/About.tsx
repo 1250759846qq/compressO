@@ -34,7 +34,7 @@ function About() {
       </section>
       <section className="mt-8">
         <p className="text-center text-gray-600 dark:text-gray-400 text-sm my-1">
-          由 <Icon className="inline text-primary" name="lowResHeart" /> 热爱，公开开发于{' '}
+          由 <Icon className="inline text-primary" name="lowResHeart" /> 热情打造，公开开发于{' '}
           <TauriLink href="https://codeforreal.com">Code For Real⚡</TauriLink>
         </p>
       </section>

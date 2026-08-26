@@ -49,6 +49,8 @@ interface LatestJson {
   platforms: Platforms
 }
 
+const releaseTag = process.env.RELEASE_TAG ?? `v${getVersion()}`
+
 /**
  * Get the latest version from package.json
  */
@@ -134,7 +136,7 @@ function readSignature(filePath: string): string | null {
  * Generate platform-specific URLs
  */
 function generatePlatformUrls(version: string): Platforms {
-  const baseUrl = `https://github.com/${CONFIG.author}/${CONFIG.repo}/releases/download/${version}`
+  const baseUrl = `https://github.com/${CONFIG.author}/${CONFIG.repo}/releases/download/${releaseTag}`
   const platforms: Platforms = {}
 
   // macOS - Apple Silicon (aarch64)
@@ -158,7 +160,7 @@ function generatePlatformUrls(version: string): Platforms {
     signature: readSignature(
       `./src-tauri/target/release/bundle/nsis/${CONFIG.appName}_${version}_x64-setup.exe.sig`,
     ),
-    url: `${baseUrl}/${CONFIG.appName}_${version}_x64.exe`,
+    url: `${baseUrl}/${CONFIG.appName}_${version}_x64-setup.exe`,
   }
 
   // Linux - AppImage (universal)

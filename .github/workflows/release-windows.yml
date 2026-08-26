@@ -2,11 +2,6 @@ name: Build Windows Release
 
 on:
   workflow_dispatch:
-    inputs:
-      release_tag:
-        description: 'Release tag to build'
-        required: true
-        default: 'v3.1.0'
   push:
     tags:
       - 'v3.1.0'
@@ -67,7 +62,7 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v2
         with:
-          name: CompressO 中文版 3.1.0
+          name: CompressO 中文版 ${{ github.ref_name }}
           body: |
             简体中文界面版，功能与原版一致。
 
@@ -75,6 +70,6 @@ jobs:
 
             开源说明：本版本遵循 AGPL-3.0-only。完整修改源码、LICENSE、NOTICE 和 THIRD_PARTY_NOTICES 均随发布提供。
           files: |
-            src-tauri/target/release/bundle/nsis/CompressO_3.1.0_x64-setup.exe
-            src-tauri/target/release/bundle/nsis/CompressO_3.1.0_x64-setup.exe.sig
+            src-tauri/target/release/bundle/nsis/*-setup.exe
+            src-tauri/target/release/bundle/nsis/*-setup.exe.sig
             latest.json

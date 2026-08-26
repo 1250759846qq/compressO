@@ -1,5 +1,12 @@
 # Changelog
 
+### 3.1.1
+
+Bug Fixes:
+
+- Allow file-picker imports to register asset protocol scopes so image and video previews load correctly.
+- Keep Windows release publishing scoped to `v3.1.*` tags.
+
 ### 3.1.0
 
 Features:

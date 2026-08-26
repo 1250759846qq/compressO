@@ -13,6 +13,14 @@
     <p align="center">
 		Available for <strong>Linux</strong>, <strong>Windows</strong> & <strong>MacOS</strong>.
     </p>
+	
+	<div align="center">
+	  <p><strong>原项目：</strong><a href="https://github.com/codeforreal1/compressO">codeforreal1/compressO</a></p>
+	  <p><strong>本项目：</strong><a href="https://github.com/1250759846qq/compressO">1250759846qq/compressO</a></p>
+	  <p>本项目是基于原项目 CompressO 的简体中文本地化修改版，核心压缩功能未改动。</p>
+	  <p>许可证：AGPL-3.0-only。详见 <a href="./LICENSE">LICENSE</a>、<a href="./NOTICE.md">NOTICE.md</a> 和 <a href="./THIRD_PARTY_NOTICES.md">THIRD_PARTY_NOTICES.md</a>。</p>
+	</div>
+
     <br />
 	<div>
   <a href="https://github.com/codeforreal1/compressO/releases">
@@ -33,7 +41,7 @@
 </div>
 
 ### Install
-Download installers📦 for the specific platform can be accessed from the [releases](https://github.com/codeforreal1/compressO/releases) page.
+本修改版当前在 [Releases](https://github.com/1250759846qq/compressO/releases) 提供 Windows 10 及以上 64 位安装包。原项目的 Linux、Windows 和 macOS 安装包位于 [codeforreal1/compressO Releases](https://github.com/codeforreal1/compressO/releases)。
 
 <strong>Installer Info:</strong>
 
@@ -164,6 +172,6 @@ xattr -cr /Applications/CompressO.app
 
 ### License 🚨
 
-The project is licensed under <a href="./LICENSE">AGPL 3.0</a>
+本项目及其原项目均遵循 <a href="./LICENSE">AGPL-3.0-only</a>。
 
-This project bundles and uses third-party software. For complete third-party notices, licenses, and attributions, please see [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
+本项目使用了第三方软件。完整的第三方声明、许可证与归属请查看 [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md)。
